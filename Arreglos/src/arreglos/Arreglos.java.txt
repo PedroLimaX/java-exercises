@@ -1,0 +1,52 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package arreglos;
+
+/**
+ *
+ * @author PC04
+ */
+import java.util.Scanner;
+public class Arreglos {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    int a[];
+    int i,num,lim;
+    Scanner ent=new Scanner(System.in);
+    System.out.print("Cuantos numeros desea ingresar: ");
+    lim=ent.nextInt();
+    a=new int[lim];
+    int c=1;
+    for(i=0;i<=lim-1;i++)
+        {
+        System.out.print("Numero "+c+":");
+        a[i]=ent.nextInt();
+        c++;
+        }
+    c=1;
+    System.out.print("Que numero deseas buscar morro :v :");
+    num=ent.nextInt();
+    
+        for(i=0;i<lim;i++)
+        {   
+            if(a[i]==lim)
+            {
+                if(a[i]!=num)
+                    System.out.println("Ese numero no esta imbecíl");
+            }
+            if(a[i]==num)
+            {
+                System.out.println("El numero que buscó sí esta y su posicion es: "+(i+1));
+                i=lim+1;//para que se salga de esta madre
+            }
+        }
+
+    }
+}
