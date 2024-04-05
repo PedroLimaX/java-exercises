@@ -1,0 +1,48 @@
+importar  java.util.*;  
+// crea la clase DiffieHellmanAlgorithmExample para calcular la clave para dos personas  
+clase  DiffieHellmanAlgorithmExample {  
+    // comienzo del método main()  
+    public static void  main(String[] args)    
+    {  
+        largo  P, G, x, a, y, b, ka, kb;  
+        // crea un objeto de clase Scanner para recibir información del usuario  
+        Escáner sc =  nuevo  Escáner (System.in);  
+        System.out.println( "Ambos usuarios deben acordar las claves públicas G y P" );  
+        // toma entradas para claves públicas del usuario  
+        System.out.println( "Ingrese el valor de la clave pública G:" );  
+        G = sc.siguienteLargo();  
+        System.out.println( "Ingrese el valor de la clave pública P:" );  
+        P = sc.siguienteLargo();  
+        // obtener información del usuario para las claves privadas a y b seleccionadas por Usuario1 y Usuario2  
+        System.out.println( "Ingrese el valor de la clave privada seleccionada por el usuario1:" );  
+        a = sc.siguienteLargo();  
+        System.out.println( "Ingrese el valor de la clave privada b seleccionada por el usuario2:" );  
+        b = sc.siguienteLargo();  
+          
+        // llama al método de cálculo de potencia () para generar las claves x e y  
+        x = calcularPotencia(G, a, P);  
+        y = calcularPotencia(G, b, P);  
+        // llamar al método de cálculo de potencia () para generar claves secretas ka y kb después del intercambio de claves x e y          
+        // calcular clave secreta para Usuario1  
+        ka = calcularPotencia(y, a, P);  
+        // calcular clave secreta para Usuario2   
+        kb = calcularPotencia(x, b, P);  
+        // imprime las claves secretas de usuario1 y usuario2  
+        System.out.println( "La clave secreta para Usuario1 es:"  + ka);  
+        System.out.println( "La clave secreta para Usuario2 es:"  + kb);  
+    }  
+    // crea el método de cálculo de potencia () para encontrar el valor de x ^ y mod P  
+     Calcular potencia estática privada larga ( long  x,  long  y,  long  P)    
+    {  
+        resultado largo  =  0 ;          
+        si  (y ==  1 ){  
+            devolver  x;  
+        }  
+        más {  
+            resultado = (( largo )Math.pow(x, y)) % P;  
+            resultado devuelto  ;  
+        }  
+    }     
+}  
+
+
